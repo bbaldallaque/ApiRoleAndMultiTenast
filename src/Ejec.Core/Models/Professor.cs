@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ejec
+namespace Ejec.Models
 {
-   public  class Professor : FullAuditedEntity
+    public class Professor : FullAuditedEntity
     {
         public string FirstName { get; set; }
 

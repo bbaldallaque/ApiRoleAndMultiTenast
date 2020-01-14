@@ -1,5 +1,5 @@
-﻿using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
+﻿using Abp.AutoMapper;
+using Abp.Runtime.Validation;
 using Ejec.Models;
 using System;
 using System.Collections.Generic;
@@ -7,8 +7,9 @@ using System.Text;
 
 namespace Ejec.Profesor.Dto
 {
-    [AutoMap(typeof(Professor))]
-    public class ProfessorDto : EntityDto
+
+    [AutoMapTo(typeof(Professor))]
+    public class CreateProfessorDto : IShouldNormalize
     {
         public string FirstName { get; set; }
 
@@ -22,5 +23,14 @@ namespace Ejec.Profesor.Dto
 
         public string Address { get; set; }
 
+        public string[] RoleNames { get; set; }
+
+        public void Normalize()
+        {
+            if (RoleNames == null)
+            {
+                RoleNames = new string[0];
+            }
+        }
     }
 }

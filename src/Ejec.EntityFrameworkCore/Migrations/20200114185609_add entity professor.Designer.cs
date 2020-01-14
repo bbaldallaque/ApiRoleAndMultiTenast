@@ -4,14 +4,16 @@ using Ejec.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ejec.Migrations
 {
     [DbContext(typeof(EjecDbContext))]
-    partial class EjecDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200114185609_add entity professor")]
+    partial class addentityprofessor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
